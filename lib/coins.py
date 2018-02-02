@@ -1326,3 +1326,22 @@ class Bitcore(BitcoinMixin, Coin):
     TX_PER_BLOCK = 2
     RPC_PORT = 8556
 
+class Unitus(AuxPowMixin,Coin):
+    NAME = "Unitus"
+    SHORTNAME = "UIS"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488B21E")
+    XPRV_VERBYTES = bytes.fromhex("0488ADE4")
+    P2PKH_VERBYTE = bytes.fromhex("44")
+    P2SH_VERBYTES = [bytes.fromhex("0A")]
+    WIF_BYTE = bytes.fromhex("84")
+    GENESIS_HASH = ('d8a2b2439d013a59f3bfc626a33487a3'
+                    'd7d27e42a3c9e0b81af814cd8e592f31')
+    ESTIMATE_FEE = 0.01
+    RELAY_FEE = 0.01
+    DAEMON = daemon.FakeEstimateFeeDaemon
+    TX_COUNT = 1364102
+    TX_COUNT_HEIGHT = 1102944
+    TX_PER_BLOCK = 2
+    RPC_PORT = 50604
+    REORG_LIMIT = 2000
